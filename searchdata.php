@@ -20,7 +20,7 @@ $searchTerm = $_GET['searchTerm'];
 $tableName = 'UsingInfo';
 
 // Perform the search query
-$sql = "SELECT * FROM $UsingInfo WHERE description LIKE '%$searchTerm%'";
+$sql = "SELECT * FROM $tableName WHERE description LIKE '%$searchTerm%'";
 $result = $conn->query($sql);
 
 // Check for errors in the query

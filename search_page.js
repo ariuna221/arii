@@ -1,6 +1,5 @@
 function searchData() {
     var searchTerm = document.getElementById('searchTerm').value;
-
     // Make an AJAX request to searchdata.php
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -11,7 +10,7 @@ function searchData() {
 
                 // Parse the JSON response
                 var data = JSON.parse(xhr.responseText);
-
+                console.log(data, "hehehe")
                 // Process the data and update the result container
                 displayResults(data, resultContainer);
             } else {
