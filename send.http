@@ -1,4 +1,6 @@
-GET https://csii203-at-num-2023autumn-w1.azurewebsites.net/api/endpoint2?code=vgtcas3Sthgog5Hq5ATf6mYfAZHumroe9KPFbeEXEFJ2AzFuaXvZhg==&studentid=21b1num2919
+GET  https://csii203-at-num-2023autumn-w1.azurewebsites.net/api/endpoint2?code=vgtcas3Sthgog5Hq5ATf6mYfAZHumroe9KPFbeEXEFJ2AzFuaXvZhg==&studentid=21b1num2919
+Accept: application/json
+
 
 {
     "studentid": "21b1num2919",
