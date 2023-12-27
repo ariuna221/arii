@@ -33,7 +33,7 @@ function displayResults(data, container) {
         var list = document.createElement('ul');
         data.forEach(function (item) {
             var listItem = document.createElement('li');
-            listItem.textContent = item.description;
+            listItem.textContent = item.usage_description;
             list.appendChild(listItem);
         });
         container.appendChild(list);

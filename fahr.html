@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    
+    <label for="fahrenheit">Enter Fahrenheit temperature:</label>
+    <input type="number" id="fahrenheit" placeholder="Fahrenheit">
+    <button onclick="convertToFahrenheit()">Convert to Celsius</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function convertToFahrenheit() {
+            // Get Fahrenheit value from input
+            const fahrenheit = parseFloat(document.getElementById('fahrenheit').value);
+
+            // Check if the input is a valid number
+            if (isNaN(fahrenheit)) {
+                alert('Please enter a valid number for Fahrenheit.');
+                return;
+            }
+
+            // Convert Fahrenheit to Celsius
+            const celsius = (fahrenheit - 32) * (5/9);
+
+            // Display the result
+            document.getElementById('result').innerHTML = `${fahrenheit} Fahrenheit is ${celsius.toFixed(2)} Celsius.`;
+
+            // Add the reverse conversion button
+            document.getElementById('result').innerHTML += '<br><button onclick="convertToCelsius()">Convert to Fahrenheit</button>';
+        }
+
+        function convertToCelsius() {
+            // Get Celsius value from the previous conversion
+            const celsius = parseFloat(document.getElementById('result').innerText.match(/-?\d+\.\d+/));
+
+            // Check if the extracted value is a valid number
+            if (isNaN(celsius)) {
+                alert('Unable to perform reverse conversion.');
+                return;
+            }
+
+            // Convert Celsius to Fahrenheit
+            const fahrenheit = (celsius * 9/5) + 32;
+
+            // Display the reverse conversion result
+            document.getElementById('result').innerHTML = `${celsius} Celsius is ${fahrenheit.toFixed(2)} Fahrenheit.`;
+
+            // Add the forward conversion button
+            document.getElementById('result').innerHTML += '<br><button onclick="convertToFahrenheit()">Convert to Celsius</button>';
+        }
+    </script>
+</body>
+</html>
